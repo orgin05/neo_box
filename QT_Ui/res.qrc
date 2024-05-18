@@ -1,0 +1,17 @@
+<RCC>
+  <qresource prefix="images">
+    <file>images/背景.png</file>
+  </qresource>
+  <qresource prefix="icons">
+    <file>icons/back.png</file>
+    <file>icons/close.png</file>
+    <file>icons/diminish.png</file>
+    <file>icons/maxsize.png</file>
+    <file>icons/minsize.png</file>
+    <file>icons/ep_sunny.png</file>
+    <file>icons/Group.png</file>
+    <file>icons/material-symbols-light_exercise-outline.png</file>
+    <file>icons/material-symbols-light_feedback-outline-rounded.png</file>
+    <file>icons/solar_emoji-funny-circle-broken.png</file>
+  </qresource>
+</RCC>

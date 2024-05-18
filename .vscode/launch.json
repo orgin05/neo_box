@@ -1,0 +1,174 @@
+{
+  // Use IntelliSense to learn about possible attributes.
+  // Hover to view descriptions of existing attributes.
+  // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+  "version": "0.2.0",
+  "configurations": [
+      {
+          "name": "Daily routine",
+          "type": "debugpy",
+          "request": "launch",
+          "program": "${workspaceFolder}/train_code/daily/backend/daily_routine.py",
+          "console": "integratedTerminal",
+          "cwd": "${workspaceFolder}/train_code/daily/backend",
+          "justMyCode": true,
+          "args": ["--side","right",
+          "--trial-num","15",  
+          "--major-side-num", "10",  
+          // "--trigger-port", "COM6",
+          "--hand-port","COM3"]
+      },
+      {
+          "name": "General training paradigm",
+          "type": "debugpy",
+          "request": "launch",
+          "program": "general_grasp_training.py",
+          "console": "integratedTerminal",
+          "cwd": "${workspaceFolder}/backend",
+          "justMyCode": true,
+          "args": ["--subj", "XW01", 
+          "--side","right",
+          "--n-trials", "15", 
+          "--hand-feedback",
+          "--hand-port", "COM3",
+          "--trigger-port", "COM6", 
+          "-fm", "flex", 
+          "-vfr", "0", 
+          "--difficulty", "easy",
+          "--model-filename", "riemann_rest+flex_01-02-2024-12-04-19.pkl"]
+      },
+      {
+          "name": "Free grasping paradigm",
+          "type": "debugpy",
+          "request": "launch",
+          "program": "free_grasp.py",
+          "console": "integratedTerminal",
+          "cwd": "${workspaceFolder}/backend",
+          "justMyCode": true,
+          "args": ["--subj", "XW01", 
+          "--hand-port", "COM", 
+          "--trigger-port", "COM", 
+          "-scth", "0.8",
+          "-stp", "0.9",
+          "--momentum", "0.7",
+          "--model-filename", "riemann_rest+flex_01-12-2024-21-15-11.pkl"]
+      },
+      {
+          "name": "Free grasping led test",
+          "type": "debugpy",
+          "request": "launch",
+          "program": "free_grasp_led_test.py",
+          "console": "integratedTerminal",
+          "cwd": "${workspaceFolder}/backend",
+          "justMyCode": true,
+          "args": ["--subj", "XW01", 
+          "--hand-port", "COM", 
+          "--trigger-port", "COM", 
+          "-scth", "0.8",
+          "-stp", "0.9",
+          "--momentum", "0.7",
+          "--model-filename", "riemann_rest+flex_01-12-2024-21-15-11.pkl"]
+      },
+      {
+          "name": "Band selection",
+          "type": "debugpy",
+          "request": "launch",
+          "program": "band_selection.py",
+          "console": "integratedTerminal",
+          "cwd": "${workspaceFolder}/backend",
+          "justMyCode": true,
+          "args": ["--subj", "XW01", 
+          "--band-min", "5", 
+          "--band-max", "150"]
+      },
+      {
+          "name": "Train model",
+          "type": "debugpy",
+          "request": "launch",
+          "program": "training.py",
+          "console": "integratedTerminal",
+          "cwd": "${workspaceFolder}/backend",
+          "justMyCode": true,
+          "args": ["--subj", "XW01", 
+          "--model-type", "riemann"]
+      },
+      {
+          "name": "Validation",
+          "type": "debugpy",
+          "request": "launch",
+          "program": "validation.py",
+          "console": "integratedTerminal",
+          "cwd": "${workspaceFolder}/backend",
+          "justMyCode": true,
+          "args": ["--subj", "XW01", 
+          "--model-filename", 
+          "riemann_rest+flex_01-02-2024-12-04-19.pkl"
+          // "baseline_rest+flex_01-05-2024-08-30-42.pkl"
+          // "csp_rest+flex_03-15-2024-13-48-19.pkl"
+      ]
+      },
+      {
+          "name": "Online simulation",
+          "type": "debugpy",
+          "request": "launch",
+          "program": "online_sim.py",
+          "console": "integratedTerminal",
+          "cwd": "${workspaceFolder}/backend",
+          "justMyCode": true,
+          "args": ["--subj", "XW01", 
+          "-scth", "0.5",
+          "-stp", "0.9",
+          "--momentum", "0.7",
+          "--model-filename", 
+          // "riemann_rest+flex_01-02-2024-12-04-19.pkl"
+          // "csp_rest+flex_03-15-2024-13-48-19.pkl"
+          "baseline_rest+flex_01-05-2024-08-30-42.pkl"
+          // "riemann_rest+flex_0.25s.pkl"
+          // "riemann_rest+flex_1.5s.pkl"
+          // "riemann_rest+flex_0.1s.pkl"
+      ]
+      },
+      {
+          "name": "Train hmm",
+          "type": "debugpy",
+          "request": "launch",
+          "program": "train_hmm.py",
+          "console": "integratedTerminal",
+          "cwd": "${workspaceFolder}/backend",
+          "justMyCode": true,
+          "args": ["--subj", "XW01", 
+          "--model-filename", 
+          "riemann_rest+flex_01-02-2024-12-04-19.pkl"
+          // "csp_rest+flex_03-15-2024-13-48-19.pkl"
+          // "baseline_rest+flex_01-05-2024-08-30-42.pkl"
+          // "riemann_rest+flex_0.25s.pkl"
+          // "riemann_rest+flex_1.5s.pkl"
+          // "riemann_rest+flex_0.1s.pkl"
+      ]
+      },
+      {
+          "name": "Python: 当前文件",
+          "type": "debugpy",
+          "request": "launch",
+          "program": "${file}",
+          "console": "integratedTerminal",
+          "cwd": "${workspaceFolder}/backend",
+          "justMyCode": true
+      },
+      {
+          "name": "Python: Debug Tests",
+          "type": "debugpy",
+          "request": "launch",
+          "program": "${file}",
+          "purpose": [
+              "debug-test"
+          ],
+          "console": "integratedTerminal",
+          "cwd": "${workspaceFolder}/backend",
+          "env": {
+              "PYTHONPATH": "${workspaceFolder}/backend"
+          },
+          "justMyCode": false,
+      }
+  ]
+}
